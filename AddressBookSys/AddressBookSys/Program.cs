@@ -41,17 +41,24 @@ namespace AddressBookSys
         //details of address book
         public void Print()
         {
-            foreach(Contacts contact in person)
+            if (person.Count == 0)
             {
-                Console.WriteLine("Address book details");
-                Console.WriteLine("First Name: " + contact.firstname);
-                Console.WriteLine("Last Name: " + contact.lastname);
-                Console.WriteLine("Address: " + contact.address);
-                Console.WriteLine("City: " + contact.city);
-                Console.WriteLine("State: " + contact.state);
-                Console.WriteLine("Zip: " + contact.zipcode);
-                Console.WriteLine("phone Number: " + contact.phoneNumber);
-                Console.WriteLine("Email: " + contact.email);
+                Console.WriteLine("AddressBook is Empty");
+            }
+            else
+            {
+                foreach (Contacts contact in person)
+                {
+                    Console.WriteLine("Address book details");
+                    Console.WriteLine("First Name: " + contact.firstname);
+                    Console.WriteLine("Last Name: " + contact.lastname);
+                    Console.WriteLine("Address: " + contact.address);
+                    Console.WriteLine("City: " + contact.city);
+                    Console.WriteLine("State: " + contact.state);
+                    Console.WriteLine("Zip: " + contact.zipcode);
+                    Console.WriteLine("phone Number: " + contact.phoneNumber);
+                    Console.WriteLine("Email: " + contact.email);
+                }
             }
         }
 
