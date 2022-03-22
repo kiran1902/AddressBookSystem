@@ -36,7 +36,6 @@ namespace AddressBookSys
             Console.WriteLine("Enter the phoneNumber : ");
             contact.phoneNumber = Console.ReadLine();
             person.Add(contact);
-            Console.WriteLine(contact);
         }
 
         //details of address book
@@ -56,6 +55,7 @@ namespace AddressBookSys
             }
         }
 
+        //Editing a Contact
         public void Edit()
         {
             if (person.Count != 0)
@@ -136,8 +136,31 @@ namespace AddressBookSys
             }
 
         }
+
+        //Deleting a contact
+        public void Delete()
+        {
+            Console.WriteLine("Enter tne name of the person you want to remove : ");
+            string Delete = Console.ReadLine();
+
+            foreach(var contact in person)
+            {
+                Console.WriteLine("Are you sure you want to delete the contact of this person? (Y/N)");
+                if(Console.ReadKey().Key == ConsoleKey.Y)
+                {
+                    person.Remove(contact);
+                    Console.WriteLine("Contact is Deleted");
+
+                }
+                else
+                {
+                    Console.WriteLine("Contact not found");
+                }
+            }
+        }
     }
 }
        
 
-  
+
+
